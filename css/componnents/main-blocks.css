@@ -1,0 +1,32 @@
+.header {
+
+}
+
+.row {
+    display: flex;
+    height: 80vh;
+}
+
+.divider {
+    background-color: var(--divider-bg-color);
+
+    &.top-content {
+        height: 10vh;
+    }
+
+    &.side-content {
+        background-color: var(--side-bg-color);
+        width: 25%;
+        height: 100%;
+    }
+
+    &.center-content {
+        background-color: var(--center-bg-color);
+        width: 50%;
+        height: 100%;
+    }
+
+    &.bottom-content {
+        height: 10vh;
+    }
+}
