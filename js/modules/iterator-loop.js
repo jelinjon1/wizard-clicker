@@ -1,19 +1,36 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const counterElement = document.getElementById("counter");
-    const productionElement = document.getElementById("production");
+const counterElement = document.getElementById("counter");
+const productionElement = document.getElementById("production");
 
-    let counterValue = 0;
+let counterValue = 0;
+let additionIncrement = 0;
+const baseIncrement = 0;
+const additionModifier = 1;
 
-    function updateCounter() {
-        const baseIncrement = 1;
-        const additionIncrement = 0;
-        const additionModifier = 1;
-        const total = (baseIncrement + additionIncrement) * additionModifier;
+export function updateAdditionIncrement(amount) {
+    additionIncrement = amount;
 
-        counterValue += total;
-        counterElement.textContent = counterValue;
-        productionElement.textContent = total + " /s";
+    updateProductionDisplay(formatNum(amount));
+}
+
+function updateTotalCounter() {
+    const total = (baseIncrement + additionIncrement) * additionModifier;
+
+    counterValue += total;
+    counterElement.textContent = formatNum(counterValue);
+}
+
+function updateProductionDisplay(total) {
+    productionElement.textContent = total + " /s";
+}
+
+function formatNum(num) {
+    if (num >= 10000) {
+        return num.toExponential(2); // format to scientific notation with 2 decimal places
     }
+    return num;
+}
 
-    setInterval(updateCounter, 1000);
+// loop total counter updates
+document.addEventListener("DOMContentLoaded", function () {
+    setInterval(updateTotalCounter, 1000);
 });
