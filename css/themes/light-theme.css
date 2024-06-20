@@ -1,5 +1,8 @@
 :root {
     --primary-color: #000;
-    --background-color: #fff;
-    /* --text-color: #333; */
+    --background-color: rgb(111, 96, 77);
+    --divider-bg-color: rgb(179, 179, 179);
+    --side-bg-color: rgb(138, 108, 70);
+    --center-bg-color: rgb(95, 95, 95);
+    --text-color: #000000;
 }

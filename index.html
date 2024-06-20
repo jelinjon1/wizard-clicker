@@ -27,21 +27,32 @@
         />
         <link rel="manifest" href="icon/site.webmanifest" />
     </head>
-    <title>Hello</title>
+    <title>Wizard idle</title>
     <body>
-        <div class="divider top-content" id="top-content">
+        <div class="divider top-content header">
             <button id="theme-toggle">Toggle Theme</button>
             top bar
+            <div class="number-display dust-counter" id="counter">0</div>
+            <div class="number-display production-meter" id="production">0</div>
         </div>
 
-        <section class="row">
-            <div class="divider side-content">left bar</div>
-            <div class="divider center-content">center content</div>
-            <div class="divider side-content">right bar</div>
+        <section class="row center">
+            <div class="divider side-content">
+                <div>left</div>
+            </div>
+            <div class="divider center-content">
+                <div>center</div>
+            </div>
+            <div class="divider side-content">
+                <div>right</div>
+            </div>
         </section>
 
-        <div class="divider bottom-content">bottom content</div>
+        <div class="divider bottom-content">
+            <div>bottom</div>
+        </div>
 
         <script src="js/main.js" type="module"></script>
     </body>
+    <footer>sadad</footer>
 </html>
