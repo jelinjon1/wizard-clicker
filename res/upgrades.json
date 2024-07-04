@@ -1,0 +1,16 @@
+{
+    "upgrades": [
+        {
+            "name": "idk1",
+            "cost": 123,
+            "unlock-amount": 1,
+            "description": "ahoj"
+        },
+        {
+            "name": "idk2",
+            "cost": 12,
+            "unlock-amount": 100,
+            "description": "ahojda jirka"
+        }
+    ]
+}

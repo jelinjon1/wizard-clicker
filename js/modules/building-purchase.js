@@ -1,4 +1,3 @@
-import "./iterator-loop.js";
 import { updateAdditionIncrement } from "./iterator-loop.js";
 
 let buildingsList = document.getElementsByClassName("building");

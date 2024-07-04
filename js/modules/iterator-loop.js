@@ -12,7 +12,9 @@ export function updateAdditionIncrement(amount) {
     updateProductionDisplay(formatNum(amount));
 }
 
-function updateTotalCounter() {
+function activeProduction() {}
+
+function passiveProduction() {
     const total = (baseIncrement + additionIncrement) * additionModifier;
 
     counterValue += total;
@@ -32,5 +34,5 @@ function formatNum(num) {
 
 // loop total counter updates
 document.addEventListener("DOMContentLoaded", function () {
-    setInterval(updateTotalCounter, 1000);
+    setInterval(passiveProduction, 1000);
 });
