@@ -16,9 +16,21 @@ class Production {
 
         this.ballElement.addEventListener("click", (e) => {
             this.updateTotalClickProduction();
-            this.updateCounterElement(this.totalClickProd);
-            console.log("jello bro");
+            this.incrementProduction(this.totalClickProd);
+            console.log("click on ball has happened");
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            setInterval(this.incrementPassiveProduction, 1000);
+        });
+    }
+
+    updatePassiveProdAddition(amount) {
+        this.passiveProdAddition += amount;
+    }
+
+    updatePassiveProdMultiplier(amount) {
+        this.passiveProdMultiplier += amount;
     }
 
     updateTotalPassiveProduction() {
@@ -27,16 +39,40 @@ class Production {
             this.passiveProdMultiplier;
     }
 
+    updateClickProdAddition(amount) {
+        this.clickProdAddition += amount;
+    }
+
+    updateClickProdMultiplier(amount) {
+        this.passiveProdAddition += amount;
+    }
+
     updateTotalClickProduction() {
         this.totalClickProd =
             (this.clickProd + this.clickProdAddition) *
             this.clickProdMultiplier;
     }
 
-    updateCounterElement(increment) {
-        this.counterElement.textContent =
-            parseInt(this.counterElement.textContent) + increment;
+    updateCounterElement() {
+        this.counterElement.textContent = this.innerCounter;
     }
+
+    // use negative for purchases of items
+    updateInnerCounter(increment) {
+        this.innerCounter += increment;
+    }
+
+    incrementProduction(amount) {
+        this.updateInnerCounter(amount);
+        this.updateCounterElement();
+    }
+}
+
+function incrementPassiveProduction() {
+    console.log("Dsada");
+    this.updateTotalPassiveProduction();
+    this.updateInnerCounter(this.totalPassiveProd);
+    this.updateCounterElement();
 }
 
 const prodController = new Production();
